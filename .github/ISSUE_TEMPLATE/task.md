@@ -1,17 +1,17 @@
 ---
-name: Tarea
-about: Registro de tarea realizada
-title: "[ID] — [Breve título]"
+name: Task
+about: Log of completed task
+title: "[ID] — [Brief title]"
 labels: ''
 assignees: ''
 ---
 
-**Fecha:** YYYY-MM-DD &nbsp;&nbsp;&nbsp; **Responsable:** [Nombre] &nbsp;&nbsp;&nbsp; **Tiempo invertido:** [Xh Ym]
+**Date:** YYYY-MM-DD &nbsp;&nbsp;&nbsp; **Assignee:** [Name] &nbsp;&nbsp;&nbsp; **Time spent:** [Xh Ym]
 
-## Descripción
+## Description
 
-- **¿Qué se hizo?:** Breve resumen (1–2 líneas)
+- **What was done?:** Brief summary (1–2 lines)
 
-## Cambios
+## Changes
 
 - 
