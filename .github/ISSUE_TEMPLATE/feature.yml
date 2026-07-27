@@ -1,0 +1,281 @@
+name: Feature
+description: Specify a feature for implementation through a spec-driven development loop
+title: "[Feature]: "
+labels:
+  - feature
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form as the source specification for the feature. Be explicit and testable:
+        an AI agent should be able to understand the intent, identify boundaries, implement the
+        change, and verify the result without inventing product decisions.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Feature summary
+      description: Describe the requested capability and its intended outcome in a few sentences.
+      placeholder: Users should be able to ... so that ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and motivation
+      description: What problem exists today, who experiences it, and why is it worth solving?
+      placeholder: |
+        Current behavior:
+        Affected users:
+        Impact:
+        Evidence or context:
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired_outcome
+    attributes:
+      label: Desired outcome and success measures
+      description: State the user or business outcome. Include measurable signals when possible.
+      placeholder: |
+        Desired outcome:
+        Success metrics:
+        - ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: user_stories
+    attributes:
+      label: Users and use cases
+      description: Identify actors and their primary workflows.
+      placeholder: |
+        - As a <user>, I want <capability>, so that <benefit>.
+        - As a <user>, I want <capability>, so that <benefit>.
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_behavior
+    attributes:
+      label: Current behavior
+      description: Explain the existing flow, including workarounds or related functionality.
+      placeholder: Today, when ... the system ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_behavior
+    attributes:
+      label: Proposed behavior
+      description: Describe the expected end-to-end experience and system behavior.
+      placeholder: |
+        1. The user ...
+        2. The system ...
+        3. The user sees ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: In scope
+      description: List the capabilities and changes that must be delivered by this issue.
+      placeholder: |
+        - ...
+        - ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: out_of_scope
+    attributes:
+      label: Out of scope
+      description: List adjacent work and plausible interpretations that this issue excludes.
+      placeholder: |
+        - ...
+        - ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: functional_requirements
+    attributes:
+      label: Functional requirements
+      description: Number each required behavior so it can be referenced in implementation and tests.
+      placeholder: |
+        - FR-1: The system must ...
+        - FR-2: When ..., the system must ...
+        - FR-3: The user can ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: non_functional_requirements
+    attributes:
+      label: Non-functional requirements
+      description: Specify relevant performance, security, privacy, accessibility, reliability, and compatibility expectations. Write "None" when not applicable.
+      placeholder: |
+        - NFR-1 (performance): ...
+        - NFR-2 (security/privacy): ...
+        - NFR-3 (accessibility): ...
+        - NFR-4 (compatibility/reliability): ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: interfaces_and_data
+    attributes:
+      label: Interfaces, data, and contracts
+      description: Describe UI states, API or event contracts, schemas, validation, migrations, permissions, and compatibility requirements. Write "None" when not applicable.
+      placeholder: |
+        UI/UX:
+        API/events:
+        Data model/migrations:
+        Validation:
+        Authorization:
+        Backward compatibility:
+    validations:
+      required: true
+
+  - type: textarea
+    id: edge_cases
+    attributes:
+      label: Edge cases and failure behavior
+      description: Define behavior for empty, invalid, duplicate, concurrent, partial, unauthorized, offline, and dependency-failure states as applicable.
+      placeholder: |
+        - If ..., then ...
+        - If the dependency is unavailable, ...
+        - If the operation is retried, ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance criteria
+      description: Provide observable, testable scenarios. Prefer Given/When/Then and cover the main flow plus important failures.
+      placeholder: |
+        - [ ] AC-1
+          Given ...
+          When ...
+          Then ...
+
+        - [ ] AC-2
+          Given ...
+          When ...
+          Then ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints and implementation guardrails
+      description: Record mandated technologies, architectural boundaries, standards, prohibited approaches, or files/components that must remain unchanged. Write "None" when unconstrained.
+      placeholder: |
+        - Must ...
+        - Must not ...
+        - Preserve ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies and related work
+      description: Link prerequisite issues, downstream consumers, external systems, documentation, designs, or prior decisions. Write "None" when there are no dependencies.
+      placeholder: |
+        Depends on:
+        Blocks:
+        Related issues/PRs:
+        References:
+    validations:
+      required: true
+
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification plan
+      description: Explain how the implementation must be proven correct, including automated tests and any manual checks.
+      placeholder: |
+        Unit tests:
+        Integration/contract tests:
+        End-to-end tests:
+        Manual verification:
+        Regression coverage:
+    validations:
+      required: true
+
+  - type: textarea
+    id: observability_rollout
+    attributes:
+      label: Observability, rollout, and rollback
+      description: Define logging, metrics, alerting, feature flags, migration/deployment order, and rollback. Write "None" where not applicable.
+      placeholder: |
+        Observability:
+        Rollout:
+        Feature flag:
+        Rollback/recovery:
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks and trade-offs
+      description: Identify technical or product risks, likely regressions, and accepted trade-offs.
+      placeholder: |
+        - Risk: ...
+          Mitigation: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: open_questions
+    attributes:
+      label: Open questions and decisions required
+      description: List unresolved decisions. Assign an owner when possible. Write "None—the specification is ready" if nothing blocks implementation.
+      placeholder: |
+        - [ ] Question or decision — Owner: @... — Needed by: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: ai_instructions
+    attributes:
+      label: AI implementation instructions
+      description: Add repository-specific instructions for an AI agent, including where to look for context and when it must stop for clarification.
+      placeholder: |
+        Relevant modules/files:
+        Existing patterns to follow:
+        Commands to run:
+        Do not change:
+        Stop and ask when:
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context
+      description: Add mockups, diagrams, logs, examples, research, or any other supporting material.
+      placeholder: Drag and drop files or add links here.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: readiness
+    attributes:
+      label: Specification readiness
+      description: Confirm that this issue is suitable to enter the SDD implementation loop.
+      options:
+        - label: The acceptance criteria are observable and testable.
+          required: true
+        - label: Scope and non-goals are explicit.
+          required: true
+        - label: Open product decisions are resolved or clearly identified as blockers.
+          required: true
+        - label: No secrets, credentials, or sensitive personal data are included.
+          required: true
