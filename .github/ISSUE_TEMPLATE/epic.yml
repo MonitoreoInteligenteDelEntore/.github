@@ -1,0 +1,174 @@
+name: Epic
+description: Define a high-level product capability that will be decomposed into child Feature issues
+title: ""
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to define a high-level product capability.
+
+        An Epic is a parent work item used to group related functional requirements.
+        It is not implemented directly and does not enter the Spec Kit implementation loop.
+
+        Approved functional requirements associated with this Epic will later be
+        converted into child Feature issues. Each child Feature will have its own
+        specification, plan, implementation tasks, tests, and Pull Request.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Epic summary
+      description: Describe the high-level product capability and its intended value.
+      placeholder: |
+        Provide the platform capabilities required to ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and motivation
+      description: Explain the product problem or need addressed by this Epic and why it matters.
+      placeholder: |
+        Problem:
+        Affected users or stakeholders:
+        Expected value:
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired_outcome
+    attributes:
+      label: Desired outcome
+      description: Describe the expected product-level outcome without defining implementation details.
+      placeholder: |
+        The platform should provide the capabilities required to ...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      description: Identify the primary system component involved in this Epic.
+      options:
+        - Software
+        - Hardware
+        - Software / Hardware
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: In scope
+      description: Define the high-level capabilities covered by this Epic.
+      placeholder: |
+        - ...
+        - ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: out_of_scope
+    attributes:
+      label: Out of scope
+      description: Define adjacent capabilities or system responsibilities that are explicitly excluded.
+      placeholder: |
+        - ...
+        - ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: functional_requirements
+    attributes:
+      label: Related functional requirements
+      description: |
+        List the approved functional requirements associated with this Epic.
+        Preserve their existing requirement identifiers and descriptions.
+        Do not invent new requirement identifiers.
+      placeholder: |
+        - RF01 — ...
+        - RF02 — ...
+        - RF03 — ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: non_functional_requirements
+    attributes:
+      label: Related non-functional requirements
+      description: |
+        List only approved non-functional requirements that are relevant at Epic level.
+        Write "None identified" when none currently apply.
+      placeholder: |
+        - RNF01 — ...
+        - RNF02 — ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: completion_criteria
+    attributes:
+      label: Epic completion criteria
+      description: |
+        Define the conditions under which the Epic can eventually be considered complete.
+        These are Epic-level completion conditions, not Feature acceptance criteria.
+      placeholder: |
+        - [ ] All approved functional requirements are represented by traceable child Feature issues.
+        - [ ] All required child Features have reached Done.
+        - [ ] Applicable RF and RNF coverage has been verified.
+        - [ ] No required child Feature remains unresolved.
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies and related work
+      description: Identify relevant prerequisite Epics, external systems, major dependencies, or related work. Write "None" when not applicable.
+      placeholder: |
+        Depends on:
+        Related Epics:
+        External systems:
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks and constraints
+      description: Identify significant product, integration, hardware, or scope risks relevant to the Epic. Write "None identified" when not applicable.
+      placeholder: |
+        - Risk: ...
+          Impact: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context
+      description: Add diagrams, documentation references, research, or other supporting information.
+      placeholder: Add references or supporting context here.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: readiness
+    attributes:
+      label: Epic readiness
+      description: Confirm that the Epic is sufficiently defined to enter the Product Backlog.
+      options:
+        - label: The Epic describes a clear high-level product capability.
+          required: true
+        - label: In-scope and out-of-scope boundaries are explicit.
+          required: true
+        - label: Known functional requirement identifiers are preserved and no new identifiers were invented.
+          required: true
+        - label: The Epic is not being treated as a directly implementable Spec Kit Feature.
+          required: true
+        - label: No secrets, credentials, or sensitive personal data are included.
+          required: true
